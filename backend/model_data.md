@@ -23,3 +23,10 @@ For Track Model
     "guidedTourStatus": true,
     "guidedTourFee": 30
 }
+
+git status
+git checkout -b backend
+git add .
+git commit -m "Initial backend implementation"
+git push -u origin backend
+
