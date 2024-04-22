@@ -1,12 +1,14 @@
 import "./App.css";
-import MyAppBar from "./components/MyAppBar";
+import AppRoutes from './routes/AppRoutes'
+
 
 
 function App() {
   return (
     <>
-      <MyAppBar />
       
+      
+      <AppRoutes/>
     </>
   );
 }
