@@ -1,5 +1,6 @@
 import ExploreParks from "../components/ExporeParks";
 import MyAppBar from "../components/MyAppBar";
+import MyFooter from "../components/MyFooter";
 
 
 export default function ExplorePage() {
@@ -9,7 +10,7 @@ export default function ExplorePage() {
         <div className="ExplorePage"></div>
         <MyAppBar/>
         <ExploreParks/>
-       
+       <MyFooter/>
       </>
     );
   }

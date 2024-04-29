@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,8 +12,12 @@ import { NavLink } from 'react-router-dom';
 import { pages } from '../pages/pages';
 import campingLogo from '../assets/camping.png';
 
+// Import the useUserContext hook
+import { useUserContext } from '../context/UserContext';
+
 function MyAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const { currentUser, handleUpdateUser } = useUserContext(); // Get user state and update function
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -23,67 +27,49 @@ function MyAppBar() {
     setAnchorElNav(null);
   };
 
+  const handleLogout = () => {
+    handleUpdateUser({}); 
+    handleCloseNavMenu();
+  };
+
   return (
-    <AppBar position="static" sx={{ height: 100, display: 'flex', justifyContent: 'center',backgroundColor:'#393F44' }}>
+    <AppBar position="static" sx={{ height: 100, display: 'flex', justifyContent: 'center', backgroundColor: '#393F44' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <img
-              src={campingLogo}
-              alt="Camping Logo"
-              style={{ width: 40, height: 40, marginRight: 10, display: { xs: 'flex', md: 'none' } }}
-            />
-            <Typography
-              variant="h6"
-              noWrap
-              component={NavLink}
-              to="/"
-              sx={{
-                mr: 2,
-                display: { xs: 'block', md: 'flex' }, // Render at all screen sizes
-                fontFamily: 'sans-serif',
-                fontWeight: 700,
-                color: 'inherit',
-                textDecoration: 'none',
-              }}
-            >
+            <img src={campingLogo} alt="Camping Logo" style={{ width: 40, height: 40, marginRight: 10, display: { xs: 'flex', md: 'none' } }} />
+            <Typography variant="h6" noWrap component={NavLink} to="/" sx={{ mr: 2, display: { xs: 'block', md: 'flex' }, fontFamily: 'sans-serif', fontWeight: 700, color: 'inherit', textDecoration: 'none' }}>
               Alpine Adventures
             </Typography>
           </Box>
 
-          <Box sx={{ flexGrow: 1 }} /> {/* Pushes menu and nav items to the right on larger screens */}
+          <Box sx={{ flexGrow: 1 }} />
 
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
+            <IconButton size="large" aria-label="menu" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleOpenNavMenu} color="inherit">
               <MenuIcon />
             </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'top', // Align menu to top
-                horizontal: 'right', // Align menu to right
-              }}
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-            >
+            <Menu id="menu-appbar" anchorEl={anchorElNav} anchorOrigin={{ vertical: 'top', horizontal: 'right' }} transformOrigin={{ vertical: 'top', horizontal: 'right' }} keepMounted open={Boolean(anchorElNav)} onClose={handleCloseNavMenu}>
               {pages.map((page) => (
-                <MenuItem key={page.link} component={NavLink} to={page.link}>
+                <MenuItem key={page.link} component={NavLink} to={page.link} onClick={handleCloseNavMenu}>
                   {page.label}
                 </MenuItem>
               ))}
+              {!currentUser.email && (
+                <>
+                  <MenuItem component={NavLink} to="/signin">
+                    Sign In
+                  </MenuItem>
+                  <MenuItem component={NavLink} to="/signup">
+                    Sign Up
+                  </MenuItem>
+                </>
+              )}
+              {currentUser.email && (
+                <MenuItem onClick={handleLogout}>
+                  Logout
+                </MenuItem>
+              )}
             </Menu>
           </Box>
 
@@ -93,6 +79,21 @@ function MyAppBar() {
                 {page.label}
               </MenuItem>
             ))}
+            {!currentUser.email && (
+              <>
+                <MenuItem component={NavLink} to="/signin">
+                  SIGN IN
+                </MenuItem>
+                <MenuItem component={NavLink} to="/signup">
+                  SIGN UP
+                </MenuItem>
+              </>
+            )}
+            {currentUser.email && (
+              <MenuItem onClick={handleLogout}>
+                LOGOUT {currentUser.firstName}
+              </MenuItem>
+            )}
           </Box>
         </Toolbar>
       </Container>

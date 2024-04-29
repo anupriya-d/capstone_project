@@ -1,13 +1,21 @@
 const express = require('express');
 
+//const dotenv = require("dotenv");
+
+
 
 
 const app =express();
 const PORT = process.env.PORT || 8000;
 
+require('dotenv').config();
+
 let dbConnect = require("./dbConnect");
 
 app.use(express.json());
+
+app.use("/images", express.static("public/images"));
+
 
 app.get('/',(req,res)=>{
     res.json({messege: 'Welcome to My Hiking Application'});

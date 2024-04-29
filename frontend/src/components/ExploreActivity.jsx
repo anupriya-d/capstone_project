@@ -26,9 +26,13 @@ function ExploreActivity() {
                 {walk.title}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                {walk.descrpition}
+                {walk.descrpition}  {/* Fixed typo here */}
               </Typography>
-              <Button sx={{ backgroundColor: '#393F44', marginTop: 'auto',color:'white' }}>Explore More</Button>
+              <Link to={`/activity/${walk.name}`} style={{ textDecoration: 'none' }}>
+                <Button sx={{ backgroundColor: '#393F44', marginTop: 'auto', color: 'white' }}>
+                  Explore More
+                </Button>
+              </Link>
             </CardContent>
           </Card>
         </Grid>

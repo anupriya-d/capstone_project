@@ -9,8 +9,8 @@ export default function SignUpPage() {
       <>
         <div className="SignUpPage"></div>
         <MyAppBar/>
-        <LoginForm/>
-       
+        
+       <LoginForm/>
       </>
     );
   }

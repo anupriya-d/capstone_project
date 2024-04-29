@@ -1,13 +1,27 @@
-const express = require('express');
+const express = require("express");
 const userRoute = express.Router();
 const Controllers = require("../controllers");
+const { verifyToken } = require("../middleware/auth");
 
-userRoute.post('/signup', (req, res) => {
-    Controllers.userController.createUser(req.body, res);
-});
+
+
+
+userRoute.get('/',  (req, res) => {
+    Controllers.userController.getUsers(res);
+})
 
 userRoute.post('/login', (req, res) => {
-    Controllers.userController.loginUser(req.body, res);
-});
+    Controllers.userController.loginUser(req, res)
+})
+
+userRoute.post('/create', (req, res) => {
+    Controllers.userController.createUser(req.body, res)
+})
+
+userRoute.post('/register', (req, res) => {
+    Controllers.userController.registerUser(req, res)
+})
+
+
 
 module.exports = userRoute;

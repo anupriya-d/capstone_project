@@ -1,6 +1,7 @@
 import ExploreActivity from "../components/ExploreActivity";
 import MyAppBar from "../components/MyAppBar";
 import MyBanner from "../components/MyBanner";
+import MyFooter from "../components/MyFooter";
 
 export default function HomePage() {
     // Save in pages/Homepage.jsx
@@ -10,7 +11,7 @@ export default function HomePage() {
         <MyAppBar/>
         <MyBanner/>
         <ExploreActivity/>
-       
+       <MyFooter/>
       </>
     );
   }

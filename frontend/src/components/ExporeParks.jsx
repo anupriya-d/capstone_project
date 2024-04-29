@@ -25,12 +25,20 @@ function ExploreParks() {
               />
               <CardContent sx={{  }}>
                 <Typography variant="h6" component="h2">
-                  {place.name}
+                  {place.name+" National Park"}
                 </Typography>
                 <Typography variant="p" color="text.secondary">
                   {place.descrpition}
                 </Typography>
-              
+                <div>
+                <Link to={`/park/${place.name}`} style={{ textDecoration: 'none' }}>
+                 
+                <Button sx={{ backgroundColor: '#393F44', marginTop: '10px', color: 'white' }}>
+                  Explore More
+                </Button>
+
+              </Link>
+                </div>
                </CardContent>
   
             </Card>

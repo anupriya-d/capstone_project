@@ -4,6 +4,11 @@ import ContactPage from "../pages/ContactPage";
 import HomePage from "../pages/HomePage";
 import SignUpPage from "../pages/SignUpPage";
 import SignInPage from "../pages/SignInPage";
+import TrackPage from "../pages/TrackPage";
+import ActivityPage from "../pages/ActivityPage";
+import ParkPage from "../pages/ParkPage";
+import ManageTrackPage from "../pages/ManageTrackPage";
+import BookingPage from "../pages/BookingPage";
 
 
 function AppRoutes(props) {
@@ -18,8 +23,11 @@ function AppRoutes(props) {
       <Route path="/contact" element={<ContactPage {...props} />} />
       <Route path="/signup" element={<SignUpPage {...props} />} />
       <Route path="/signin" element={<SignInPage {...props} />} />
-
-
+      <Route path="/track/:id/:title" element={<TrackPage {...props} />} />
+      <Route path="/activity/:name" element={<ActivityPage {...props} />} />
+      <Route path="/park/:name" element={<ParkPage {...props} />} />
+      <Route path="/booking/:id/:title" element={<BookingPage {...props} />} />
+      <Route path="/managetrack" element={<ManageTrackPage {...props} />} />
       {/* special route to handle if none of the above match */}
 
 

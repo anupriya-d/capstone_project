@@ -7,7 +7,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/users': 'http://localhost:8000/',
-      
+      '/tracks': 'http://localhost:8000/',
+      '/reviews': 'http://localhost:8000/',
+      '/bookings': 'http://localhost:8000/',
+      '/images': 'http://localhost:8000/'
     }
   }
 })

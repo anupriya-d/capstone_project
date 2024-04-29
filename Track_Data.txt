@@ -1,0 +1,478 @@
+{
+    "title": "Milford Foreshore Walk",
+    "location": ["Milford Sound"],
+    "locationCoordinates": [-44.6715, 167.9261],
+    "area": "Fiordland",
+    "image": "sunset-trail.jpg",
+    "duration": 30,
+    "description": "Wander through beech forest and along the sandy foreshore of Milford Sound, and enjoy fabulous views of Mitre Peak - it's an easy, short walk that's great for kids.",
+    "length": 400,
+    "elevation": 6,
+    "trackType": ["easy"],
+    "hikingGears": ["Sun Protection", "Warm Jackets"],
+    "guidedTourStatus": false,
+    "guidedTourFee": "0"
+    
+}
+
+
+{
+    "title": "The Chasm",
+    "location": "Milford Sound",
+    "locationCoordinates": [-44.7214, 167.9501],
+    "area": "Fiordland",
+    "image": "sunset-trail.jpg",
+    "duration": 20,
+    "description": "This short walk passes through native bush and ends at the edge of the Cleddau River with views of flowing water over and through the water-sculpted rock formations.",
+    "length": 400,
+    "elevation": 53,
+    "trackType": ["easy","short"],
+    "hikingGears": ["Sun Protection", "Warm Jackets"],
+    "guidedTourStatus": false,
+    "guidedTourFee": "0"
+    
+}
+
+{
+    "title": "Mirror Lake",
+    "location": "Te Anau",
+    "locationCoordinates": [-45.0283, 168.0114],
+    "area": "Fiordland",
+    "image": "sunset-trail.jpg",
+    "duration": "10",
+	"description":"Stroll among small lakes with lovely reflections of the Earl Mountains on this easy, short walk off Milford Road - it's great for children.",
+    "length": 400,
+    "elevation": 213,
+    "trackType": ["easy"],
+    "hikingGears": ["No Needed"],
+    "guidedTourStatus": false,
+    "guidedTourFee": "0"
+    
+}
+
+
+
+{
+    "title": "Lake Marian Falls",
+    "location": "Milford Sound",
+    "locationCoordinates": [-44.7214, 167.9501],
+    "area": "Fiordland",
+    "image": "sunset-trail.jpg",
+    "duration": 20,
+    "description": "Discover the spectacular Marian Falls on this easy, short walking track from Hollyford Road, off Milford Road. From the Lake Marian carpark, cross the swingbridge and continue to the spectacular series of waterfalls, about 20 minutes walk. ",
+    "length": 720,
+    "elevation": 400,
+    "trackType": "short",
+    "hikingGears": ["Sun Protection", "Warm Jackets","Boots"],
+    "guidedTourStatus": false,
+    "guidedTourFee": "0"
+ }   
+
+{
+    "title": "Milford sound walk Lookout",
+    "location": "Milford Sound",
+    "locationCoordinates": [-44.6721, 167.9287],
+    "area": "Fiordland",
+    "image": "sunset-trail.jpg",
+    "duration": 20,
+    "description": "Enjoy impressive views of stunning Milford Sound from a lookout on this short, easy-walking track. ",
+    "length": 400,
+    "elevation": 6,
+    "trackType": "short",
+    "hikingGears": ["Sun Protection", "Warm Jackets"],
+    "guidedTourStatus": false,
+    "guidedTourFee": "0"
+ } 
+
+{
+    "title": "Kepler Track (Luxmore Hut)",
+    "location": "Te Anau",
+    "locationCoordinates": [-45.4420, 167.6887],
+    "area": "Fiordland",
+    "image": "sunset-trail.jpg",
+    "duration": "8-10 hrs Return",
+    "description": "This is an excellent full day walk on the Kepler Track (a Great Walk) or overnight tramp to challenge young teenagers - it has swimming beaches, limestone cliffs and glorious mountain and lake views",
+    "length": 13800,
+    "elevation": 1085,
+    "trackType": "great",
+    "hikingGears": ["Hiking boots", "Warm clothes", "Wind jacket", "Water bottle","Sleeping bag","Hiking poles"],
+    "guidedTourStatus": true,
+    "guidedTourFee": "200"
+ } 
+
+
+{
+    "title": "Burnt Ridge Track",
+    "location": "Monowai",
+    "locationCoordinates": [-45.7918, 167.5363],
+    "area": "Fiordland",
+    "image": "sunset-trail.jpg",
+    "duration": "1-1.5 hrs Return",
+    "description": "This tramping track offers an easy walk from the Borland Lodge grounds to Lake Monowai, in Fiordland.",
+    "length": 3800,
+    "elevation": 228,
+    "trackType": "great",
+    "hikingGears": ["Hiking boots", "Warm clothes", "Wind jacket", "Water bottle"],
+    "guidedTourStatus": true,
+    "guidedTourFee": "100"
+ }
+ 
+ 
+ {
+    "title": "Shallow Bay Hut",
+    "location": "Manapouri",
+    "locationCoordinates": [-45.4928, 167.6125],
+    "area": "Fiordland",
+    "image": "sunset-trail.jpg",
+    "duration": "1-3 hrs ",
+    "description": "This track follows a short part of the Kepler Track and takes you from Shallow Bay Hut in Fiordland National Park to Rainbow Reach carpark. It's a lovely walk through the mountain beech forest with some great river views ",
+    "length": 6000,
+    "elevation": 137,
+    "trackType": "great",
+    "hikingGears": ["Hiking boots", "Warm clothes", "Wind jacket", "Water bottle"],
+    "guidedTourStatus": true,
+    "guidedTourFee": "100"
+ } 
+ 
+ 
+  {
+    "title": "Lake Marian ",
+    "location": "Milford Sound",
+    "locationCoordinates": [-44.7918, 168.0813],
+    "area": "Fiordland",
+    "image": "sunset-trail.jpg",
+    "duration": "3 hrs ",
+    "description": "Enjoy this tramping track from Hollyford Road (off Milford Road) to beautiful Lake Marian - an alpine lake in a beautiful hanging valley.",
+    "length": 3100,
+    "elevation": 400,
+    "trackType": "tramping",
+    "hikingGears": ["Hiking boots", "Warm clothes", "Wind jacket", "Water bottle","Hiking poles"],
+    "guidedTourStatus": true,
+    "guidedTourFee": "100"
+ } 
+ 
+ 
+   {
+    "title": "Hidden Falls",
+    "location": "Milford Sound",
+    "locationCoordinates": [-44.6301, 168.1219],
+    "area": "Fiordland",
+    "image": "sunset-trail.jpg",
+    "duration": "4-6 hrs ",
+    "description": "Enjoy this easy day walk along the Hollyford Track to the beautiful Hidden Falls or the nearby hut for lunch.",
+    "length": 18000,
+    "elevation": 216,
+    "trackType": "tramping",
+    "hikingGears": ["Hiking boots", "Warm clothes", "Wind jacket", "Water bottle","Hiking poles"],
+    "guidedTourStatus": true,
+    "guidedTourFee": "200"
+ } 
+ 
+ 
+  {
+    "title": "Green Lake Hut Track",
+    "location": "Monowai",
+    "locationCoordinates": [-45.7839, 167.4009],
+    "area": "Fiordland",
+    "image": "sunset-trail.jpg",
+    "duration": "3-6 hrs ",
+    "description": "This tramping track leads to a hut at attractive Green Lake in Monowai, Fiordland.",
+    "length": 7200,
+    "elevation": 284,
+    "trackType": "tramping",
+    "hikingGears": ["Hiking boots", "Warm clothes", "Wind jacket", "Water bottle"],
+    "guidedTourStatus": true,
+    "guidedTourFee": "150"
+ } 
+ 
+ 
+  {
+    "title": "Blue Pools Track",
+    "location": "Wanaka",
+    "locationCoordinates": [-44.1608, 169.2872],
+    "area": "Mount Aspiring",
+    "image": "sunset-trail.jpg",
+    "duration": "1 hr ",
+    "description": "An easy short walk through mature beech and podocarp forest leads to these natural wonders of pure glacial water gathered from the mountains.",
+    "length": 3200,
+    "elevation": 77,
+    "trackType": "easy",
+    "hikingGears": ["No Needed"],
+    "guidedTourStatus": false,
+    "guidedTourFee": "0"
+ } 
+ 
+ 
+   {
+    "title": "Fantail Falls Track",
+    "location": "Wanaka",
+    "locationCoordinates": [-44.0467, 169.3860],
+    "area": "Mount Aspiring",
+    "image": "sunset-trail.jpg",
+    "duration": "10 mins",
+    "description": "A short, easy bush walk to a view of Fantail Falls on the other side of the Haast River.",
+    "length": 200,
+    "elevation": 8,
+    "trackType": ["easy","short"],
+    "hikingGears": ["No Needed"],
+    "guidedTourStatus": false,
+    "guidedTourFee": "0"
+ } 
+ 
+ 
+   {
+    "title": "Lake Matheson Walk",
+    "location": "Fox Glacier",
+    "locationCoordinates": [-43.4453, 169.9683],
+    "area": "Mount Aspiring",
+    "image": "sunset-trail.jpg",
+    "duration": "1.5 hrs",
+    "description": "A gentle walk leads to views of the mountains reflected on the still waters of Lake Matheson. It's one of our best short walks.",
+    "length": 4400,
+    "elevation": 126,
+    "trackType": ["easy","short"],
+    "hikingGears": ["Warm clothes"],
+    "guidedTourStatus": false,
+    "guidedTourFee": "0"
+ } 
+ 
+ 
+    {
+    "title": "Rob Roy Glacier Track",
+    "location": "Wanaka",
+    "locationCoordinates": [-44.4781, 168.7281],
+    "area": "Mount Aspiring",
+    "image": "sunset-trail.jpg",
+    "duration": "3-4 hrs",
+    "description": "This track offers an easy route into a dramatic alpine landscape that includes snowfields, glaciers, sheer rock cliffs and waterfalls. Older children should be able to complete the track.",
+    "length": 10000,
+    "elevation": 472,
+    "trackType": ["short"],
+    "hikingGears": ["Warm clothes","Water bottle","Hiking boots"],
+    "guidedTourStatus": true,
+    "guidedTourFee": "50"
+ } 
+ 
+ 
+    {
+    "title": "Aspiringl Hut",
+    "location": "Wanaka",
+    "locationCoordinates": [-44.4769, 168.6602],
+    "area": "Mount Aspiring",
+    "image": "sunset-trail.jpg",
+    "duration": "2 hrs",
+    "description": "This track is located in the beautiful Mount Aspiring National Park near Wanaka. It's a short scenic tramp from Raspberry Creek Carpark through the Matukituki Valley to a historic stone Aspiring Hut.",
+    "length": 9000,
+    "elevation": 210,
+    "trackType": ["great","tramping"],
+    "hikingGears": ["Warm clothes","Water bottle","Hiking boots"],
+    "guidedTourStatus": true,
+    "guidedTourFee": "50"
+ } 
+ 
+ 
+     {
+    "title": "Routeburn Track",
+    "location": "Wanaka",
+    "locationCoordinates": [-44.7633, 168.1764],
+    "area": "Mount Aspiring",
+    "image": "sunset-trail.jpg",
+    "duration": "2-4 days,
+    "description": "Routeburn Track, also known as the ultimate alpine adventure track  of the most popular Great Walks in New Zealand. It's a high-mountain traverse that links Fiordland and Mount Aspiring national parks.",
+    "length": 31500,
+    "elevation": 1487,
+    "trackType": ["great"],
+    "hikingGears": ["Warm clothes","Water bottle","Hiking boots","Hiking poles","Sleeping bag"],
+    "guidedTourStatus": true,
+    "guidedTourFee": "400"
+ }
+ 
+    {
+    "title": "Cascade Saddle Route",
+    "location": "Wanaka",
+    "locationCoordinates": [-44.47737, 168.6238],
+    "area": "Mount Aspiring",
+    "image": "sunset-trail.jpg",
+    "duration": "7 hrs",
+    "description": "The Cascade Saddle Route is an alpine crossing recommended for experienced trampers as a fine weather, summer route.",
+    "length": 15000,
+    "elevation": 1835,
+    "trackType": ["great"],
+    "hikingGears": ["Warm clothes","Water bottle","Hiking boots","Hiking poles","Sleeping bag"],
+    "guidedTourStatus": true,
+    "guidedTourFee": "200"
+ }
+ 
+    {
+    "title": "Brewster Hut",
+    "location": "Wanaka",
+    "locationCoordinates": [-44.0876, 169.4123],
+    "area": "Mount Aspiring",
+    "image": "sunset-trail.jpg",
+    "duration": "6-8rs",
+    "description": "The track starts from Fantail Falls, crosses the unbridged Haast River, and climbs steadily through beech forest to the bushline.",
+    "length": 5000,
+    "elevation": 966,
+    "trackType": ["tramping"],
+    "hikingGears": ["Warm clothes","Water bottle","Hiking boots","Hiking poles","Sleeping bag"],
+    "guidedTourStatus": true,
+    "guidedTourFee": "200"
+ }
+ 
+ 
+  {
+    "title": "Liverpool Hut",
+    "location": "Wanaka",
+    "locationCoordinates": [-44.4309, 168.6653],
+    "area": "Mount Aspiring",
+    "image": "sunset-trail.jpg",
+    "duration": "6-8rs",
+    "description": "Liverpool Track is in the Matukituki Valley, an hour’s drive west from Wanaka. The track starts at Aspiring Hut which you get to on the West Matukituki Track.",
+    "length": 15000,
+    "elevation": 1268,
+    "trackType": ["tramping"],
+    "hikingGears": ["Warm clothes","Water bottle","Hiking boots","Hiking poles","Sleeping bag"],
+    "guidedTourStatus": true,
+    "guidedTourFee": "400"
+ }
+ 
+ 
+   {
+    "title": "Kea Point Track",
+    "location": "Mount Cook",
+    "locationCoordinates": [-43.7100, 170.0834],
+    "area": "Aoraki/Mount Cook ",
+    "image": "sunset-trail.jpg",
+    "duration": "1 hr",
+    "description": "Walk to a viewing deck with stunning views of the surrounding area.",
+    "length": 2900,
+    "elevation": 88,
+    "trackType": ["easy"],
+    "hikingGears": ["Warm clothes"],
+    "guidedTourStatus": false,
+    "guidedTourFee": "0"
+ }
+ 
+ 
+    {
+    "title": "Tasman Glacier View Track",
+    "location": "Mount Cook",
+    "locationCoordinates": [-43.6958, 170.1684],
+    "area": "Aoraki/Mount Cook ",
+    "image": "sunset-trail.jpg",
+    "duration": "30 mins",
+    "description": "View New Zealand's longest glacier, the mighty Haupapa/Tasman Glacier on one of our best short walks.",
+    "length": 1500,
+    "elevation": 82,
+    "trackType": ["easy","short"],
+    "hikingGears": ["Warm clothes"],
+    "guidedTourStatus": false,
+    "guidedTourFee": "0"
+ }
+ 
+ 
+     {
+    "title": "Hooker Valley Track:",
+    "location": "Mount Cook",
+    "locationCoordinates": [-43.7179, 170.0938],
+    "area": "Aoraki/Mount Cook ",
+    "image": "sunset-trail.jpg",
+    "duration": "3 hrs",
+    "description": "Enjoy the awe-inspiring landscapes of the Southern Alps/Kā Tiritiri o te Moana on one of our best day hikes - wind up the Hooker Valley past alpine streams and glaciers in the shadow of Aoraki/Mount Cook.",
+    "length": 10900,
+    "elevation": 197,
+    "trackType": ["easy","short","great"],
+    "hikingGears": ["Warm clothes","Hiking boots"],
+    "guidedTourStatus": true,
+    "guidedTourFee": "50"
+ }
+ 
+ 
+    {
+    "title": "Mueller Hut Route",
+    "location": "Mount Cook",
+    "locationCoordinates": [-43.7209, 170.0644],
+    "area": "Aoraki/Mount Cook ",
+    "image": "sunset-trail.jpg",
+    "duration": "5hrs",
+    "description": "At 1800 metres on the Sealy Range, Mueller Hut provides a 360-degree panorama encompassing glaciers, ice cliffs, vertical rock faces and New Zealand’s highest peaks.",
+    "length": 5200,
+    "elevation": 1056,
+    "trackType": ["great","tramping"],
+    "hikingGears": ["Warm cloths","Wind jacket","sleeping bag","Water bottle","Hiking boots","Hiking poles"],
+    "guidedTourStatus": true,
+    "guidedTourFee": "400"
+ }
+ 
+ 
+     {
+    "title": "Copland Track",
+    "location": "Mount Cook",
+    "locationCoordinates": [-43.5997, 169.8832],
+    "area": "Aoraki/Mount Cook ",
+    "image": "sunset-trail.jpg",
+    "duration": "7hrs",
+    "description": "This popular tramp gives a glimpse of Westland’s spectacular forest, river and mountain scenery, with natural hot pools at Welcome Flat an added attraction.",
+    "length":18000,
+    "elevation": 721,
+    "trackType": ["great"],
+    "hikingGears": ["Warm cloths","Wind jacket","sleeping bag","Water bottle","Hiking boots","Hiking poles"],
+    "guidedTourStatus": true,
+    "guidedTourFee": "300"
+ }
+ 
+      {
+    "title": "Sealy Tarns Track",
+    "location": "Mount Cook",
+    "locationCoordinates": [-43.7129, 170.0743],
+    "area": "Aoraki/Mount Cook ",
+    "image": "sunset-trail.jpg",
+    "duration": "7 hrs",
+    "description": "Climb the 'stairway to heaven' to Sealy Tarns, and enjoy spectacular views and alpine flowers.",
+    "length":5300,
+    "elevation": 546,
+    "trackType": ["tramping"],
+    "hikingGears": ["Warm cloths","Wind jacket","Water bottle","Hiking boots","Hiking poles"],
+    "guidedTourStatus": true,
+    "guidedTourFee": "100"
+ }
+ 
+ 
+ 
+ 
+ 
+       {
+    "title": "Ball Pass Crossing",
+    "location": "Mount Cook",
+    "locationCoordinates": [-43.7129, 170.0743],
+    "area": "Aoraki/Mount Cook ",
+    "image": "sunset-trail.jpg",
+    "duration": "2 hrs,
+    "description": "This is a remote alpine route suitable for experienced, fit, and well-equipped trampers only. It starts from privately own Caroline Hut located on the Ball Ridge and takes you to Balls Pass via Kaitiaki Peak",
+    "length":5000,
+    "elevation": 443,
+    "trackType": ["tramping"],
+    "hikingGears": ["Warm cloths","Wind jacket","Water bottle","Hiking boots","Hiking poles"],
+    "guidedTourStatus": true,
+    "guidedTourFee": "100"
+ }
+ 
+     {
+    "title": "Governors Bush Walk",
+    "location": "Mount Cook",
+    "locationCoordinates": [-43.7368, 170.0966],
+    "area": "Aoraki/Mount Cook ",
+    "image": "sunset-trail.jpg",
+    "duration": "1 hr",
+    "description": "A delightful bush walk that joins with Bowen Bush Walk to form a nature trail. ",
+    "length":1200,
+    "elevation": 100,
+    "trackType": ["short"],
+    "hikingGears": ["Warm cloths","Wind jacket"],
+    "guidedTourStatus": false,
+    "guidedTourFee": "100"
+ }
+ 
+ 
+ 
+ /trackImages/sealy_tarns.JPG

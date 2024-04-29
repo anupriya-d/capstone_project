@@ -7,6 +7,25 @@ For User Model
     "profilePhoto":"http://image_01"
 }
 
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john@example.com",
+    "password": "password123"
+  },
+  {
+    "firstName": "Alice",
+    "lastName": "Smith",
+    "email": "alice@example.com",
+    "password": "securepwd456"
+  },
+  {
+    "firstName": "Bob",
+    "lastName": "Johnson",
+    "email": "bob@example.com",
+    "password": "mysecretpassword"
+  }
+
 For Track Model
 {
     "title": "Lake Marian",
