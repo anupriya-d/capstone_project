@@ -1,14 +1,13 @@
 const express = require('express');
 const userRoute = express.Router();
-let Controllers = require("../controllers");
+const Controllers = require("../controllers");
 
-userRoute.get('/', (req, res) => {
-    Controllers.userController.getUsers(res);
-    });
+userRoute.post('/signup', (req, res) => {
+    Controllers.userController.createUser(req.body, res);
+});
 
-userRoute.post('/create', (req, res) => {
-        Controllers.userController.createUser(req.body, res);
-    });
-
+userRoute.post('/login', (req, res) => {
+    Controllers.userController.loginUser(req.body, res);
+});
 
 module.exports = userRoute;
