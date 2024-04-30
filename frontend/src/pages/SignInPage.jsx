@@ -1,3 +1,4 @@
+import ImageForm from "../components/ImageForm";
 import LoginForm from "../components/LoginForm";
 
 import MyAppBar from "../components/MyAppBar";
@@ -11,6 +12,7 @@ export default function SignUpPage() {
         <MyAppBar/>
         
        <LoginForm/>
+       <ImageForm/>
       </>
     );
   }

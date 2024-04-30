@@ -4,6 +4,7 @@ import { Button, Box, Typography, Grid, Alert } from '@mui/material';
 import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { useUserContext } from '../context/UserContext';
+import moment from 'moment';
 
 function BookingForm({ trackId,trackTitle }) {
     const [bookingDate, setBookingDate] = useState(null);
@@ -14,26 +15,38 @@ function BookingForm({ trackId,trackTitle }) {
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (bookingDate) {
-            try {
-                const response = await axios.post('/bookings/create', {
-                    user: currentUser._id,
-                    track: trackId,
-                    bookingDate: bookingDate.format('YYYY-MM-DD')
-                });
-                console.log('Booking submitted:', response.data);
-                setAlert({
-                    show: true,
-                    message: `Booking submitted successfully. Thanks, ${currentUser.firstName}!`,
-                    severity: 'success'
-                });
-            } catch (error) {
-                console.error('Failed to submit booking:', error);
-                setAlert({ show: true, message: 'Failed to submit booking', severity: 'error' });
+            // Calculate the date 3 days from now
+            const threeDaysFromNow = new Date();
+            threeDaysFromNow.setDate(threeDaysFromNow.getDate() + 3);
+        
+            // Convert bookingDate to a Date object
+            const selectedDate = new Date(bookingDate);
+        
+            // Check if the selected date is at least 3 days ahead of the current date
+            if (selectedDate >= threeDaysFromNow) {
+                try {
+                    const response = await axios.post('/bookings/create', {
+                        user: currentUser._id,
+                        track: trackId,
+                        bookingDate: moment(bookingDate).format('YYYY-MM-DD')
+                    });
+                    console.log('Booking submitted:', response.data);
+                    setAlert({
+                        show: true,
+                        message: `Booking submitted successfully. Thanks, ${currentUser.firstName}!`,
+                        severity: 'success'
+                    });
+                } catch (error) {
+                    console.error('Failed to submit booking:', error);
+                    setAlert({ show: true, message: 'Failed to submit booking', severity: 'error' });
+                }
+            } else {
+                
+                setAlert({ show: true, message: 'Please select a date atleast 3days From now.', severity: 'warning' });
             }
         } else {
             setAlert({ show: true, message: 'Please select a date before submitting.', severity: 'warning' });
-        }
-    };
+        }};
 
     return (
         <Grid container justifyContent="center">

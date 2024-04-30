@@ -2,7 +2,8 @@
 const Models = require("../models");
 const bcrypt = require('bcryptjs') // first run 'npm install bcryptjs'
 const { createToken } = require('../middleware/auth');
-
+const {sendPasswordMail} = require("../libraries/sendMail");
+const user = require("../models/user");
 
 
 const registerUser = async (req, res) => {
@@ -69,23 +70,23 @@ const loginUser = async (req, res) => {
           return; // when sending responses and finishing early, manually return or end the function to stop further processing
       }
       // Validate if user exists in our database
-      const user = await Models.User.findOne({ email: email });
+      const user = await Models.User.findOne({ email: email }).lean();
       console.log(user);
       console.log(req.body);
       // if they do exist, make sure their password matches - need to check encrypted version of password
       if (user && (await bcrypt.compare(password, user.password))) {
           // Create token for use based on their id and email
-          const token = createToken(user.id, email);
+          const token = createToken(user._id, email,user.userRole);
           // save user token
 
-          res.cookie('token', token, { httpOnly: true });
+        // res.cookie('token', token, { httpOnly: true });
           
           user.token = token;
-
-          console.log(user)
-
+            
+          
+           
           // send back logged in user details including token
-          res.status(200).json({ result: 'User successfully logged in', data: user });
+          res.status(200).json({ result: 'User successfully logged in', data:user});
       }
       else res.status(400).json({ result: "Invalid user credentials" });
   } catch (err) {
@@ -104,9 +105,63 @@ const getUsers = (res) => {
       });
   };
 
+  const addProfilePhoto = (req, res) => {
+
+    console.log(req.file) // saved filename is in req.file.filename
+    const userUpdates = { profilePhoto: '/images/' + req.file.filename};
+    console.log(userUpdates);
   
+    // save path to uploaded file in DB for this user
+    Models.User.findByIdAndUpdate(req.params.userId, userUpdates, 
+      
+      { new: true }
+    ).then(response => 
+        res.status(200).json({ result: 'Image uploaded to profile successfully', data: response}) // send updated info back in response
+    ).catch(err => 
+        res.status(500).json({ result: err.message })
+    )
+  }
+  
+
+  const sendPassword = async (req, res) => {
+    const { email } = req.body;
+
+    try {
+        // reset password to last 10 chars of email address, then send an email notifying them
+        let plainTextPw =email.substring(email.length - 10)
+        let newPassword = await bcrypt.hash(plainTextPw,10);
+        
+        const updatedUser = await Models.User.findOneAndUpdate(
+            { email: email }, 
+            { password: newPassword }, 
+            { new: true }
+        );
+
+        if (!updatedUser) {
+            res.status(404).json({result: 'User with email '+email+' not found, register first'});
+            return;
+        }
+        updatedUser.password =plainTextPw;
+         // only send email if user with that email exists
+    sendPasswordMail(updatedUser).then(response => {
+        res.status(200).json({result: 'Reset email sent successfully, check your email'});
+    }).catch(error => {
+        console.log(error.response.body.errors);
+        res.status(500).json({result: 'Error sending email: '+error.message});
+    });
+    } catch (err) {
+        console.log(err);
+        res.status(404).json({result: 'Password not reset: ' + err.message});
+        return;
+    }
+
+   
+}
+
+
+
 
 
 module.exports = {
-    registerUser, createUser,loginUser,getUsers
+    registerUser, createUser,loginUser,getUsers,addProfilePhoto,sendPassword
 }

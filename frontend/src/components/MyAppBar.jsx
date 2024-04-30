@@ -18,7 +18,12 @@ import { useUserContext } from '../context/UserContext';
 function MyAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const { currentUser, handleUpdateUser } = useUserContext(); // Get user state and update function
+  console.log(currentUser)
+  const naVPages = [...pages]
+  if (currentUser.userRole=="admin"){
 
+    naVPages.push({ link: "/managetrack", label: 'MANAGE TRACK' },)
+  }
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -37,8 +42,8 @@ function MyAppBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <img src={campingLogo} alt="Camping Logo" style={{ width: 40, height: 40, marginRight: 10, display: { xs: 'flex', md: 'none' } }} />
-            <Typography variant="h6" noWrap component={NavLink} to="/" sx={{ mr: 2, display: { xs: 'block', md: 'flex' }, fontFamily: 'sans-serif', fontWeight: 700, color: 'inherit', textDecoration: 'none' }}>
+            <img src={campingLogo} alt="Camping Logo" style={{ width: 60, height: 60, marginRight: 10, display: { xs: 'flex', md: 'none' } }} />
+            <Typography variant="h6" noWrap component={NavLink} to="/" sx={{ mr: 2, display: { xs: 'block', md: 'flex' }, fontFamily: 'Georgia', fontStyle:"italic" ,fontWeight: 800, color: 'inherit', textDecoration: 'none' }}>
               Alpine Adventures
             </Typography>
           </Box>
@@ -50,7 +55,7 @@ function MyAppBar() {
               <MenuIcon />
             </IconButton>
             <Menu id="menu-appbar" anchorEl={anchorElNav} anchorOrigin={{ vertical: 'top', horizontal: 'right' }} transformOrigin={{ vertical: 'top', horizontal: 'right' }} keepMounted open={Boolean(anchorElNav)} onClose={handleCloseNavMenu}>
-              {pages.map((page) => (
+              {naVPages.map((page) => (
                 <MenuItem key={page.link} component={NavLink} to={page.link} onClick={handleCloseNavMenu}>
                   {page.label}
                 </MenuItem>
@@ -74,7 +79,7 @@ function MyAppBar() {
           </Box>
 
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {naVPages.map((page) => (
               <MenuItem key={page.link} component={NavLink} to={page.link}>
                 {page.label}
               </MenuItem>
@@ -91,7 +96,8 @@ function MyAppBar() {
             )}
             {currentUser.email && (
               <MenuItem onClick={handleLogout}>
-                LOGOUT {currentUser.firstName}
+                <img src={currentUser.profilePhoto} alt="Profile" style={{ width: 40, height: 40, marginRight: 5 ,borderRadius:50 }} />
+                LOGOUT 
               </MenuItem>
             )}
           </Box>

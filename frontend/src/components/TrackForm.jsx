@@ -15,9 +15,10 @@ import {
   Grid,
   Container
 } from '@mui/material';
+import { useUserContext } from '../context/UserContext';
 
 const TrackForm = () => {
- 
+ const {currentUser} = useUserContext(); 
     const [track, setTrack] = useState({
         title: '',
         location: '',
@@ -68,8 +69,11 @@ const TrackForm = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        const headers = {
+            "x-access-token":currentUser.token
+        }
         try {
-            const response = await axios.post('/tracks/create', track);  
+            const response = await axios.post('/tracks/create', track,{headers:headers});  
             console.log('Review submitted:', response.data);
         } catch (error) {
             console.error('Failed to submit review:', error);

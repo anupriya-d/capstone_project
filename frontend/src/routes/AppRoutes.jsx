@@ -9,7 +9,7 @@ import ActivityPage from "../pages/ActivityPage";
 import ParkPage from "../pages/ParkPage";
 import ManageTrackPage from "../pages/ManageTrackPage";
 import BookingPage from "../pages/BookingPage";
-
+import ForgotPassword from "../components/ForgotPassword";
 
 function AppRoutes(props) {
 
@@ -26,8 +26,10 @@ function AppRoutes(props) {
       <Route path="/track/:id/:title" element={<TrackPage {...props} />} />
       <Route path="/activity/:name" element={<ActivityPage {...props} />} />
       <Route path="/park/:name" element={<ParkPage {...props} />} />
+      <Route path="forgotpw" element={<ForgotPassword {...props} />} />
       <Route path="/booking/:id/:title" element={<BookingPage {...props} />} />
       <Route path="/managetrack" element={<ManageTrackPage {...props} />} />
+      
       {/* special route to handle if none of the above match */}
 
 

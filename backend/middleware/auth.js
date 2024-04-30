@@ -16,6 +16,7 @@ const verifyToken = (req, res, next) => {
         // store decoded user data into request for controller function to use
         req.user = decoded;
         console.log(decoded)
+        if(user.userRole !='admin')return res.status(401).send("Only Admin users can manage Tracks");
     } catch (err) {
         return res.status(401).send("Invalid Token");
     }
@@ -23,9 +24,9 @@ const verifyToken = (req, res, next) => {
     return next();
 };
 
-const createToken = (userId, userEmail) => {
+const createToken = (userId, userEmail,userRole='user') => {
     const token = jwt.sign(
-        { user_id: userId, userEmail },
+        { user_id: userId, userEmail,userRole },
         process.env.JWT_KEY,
         { expiresIn: "2h" }
     );

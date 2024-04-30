@@ -2,12 +2,13 @@ const express = require('express');
 const trackRoute = express.Router();
 const Controllers = require("../controllers");
 const { uploadFile } = require("../middleware/uploads");
+const{verifyToken} = require('../middleware/auth')
 
 trackRoute.get('/', (req, res) => {
     Controllers.trackController.getAllTracks(res);
 });
 
-trackRoute.post('/create', (req, res) => {
+trackRoute.post('/create',verifyToken, (req, res) => {
     Controllers.trackController.createTrack(req.body, res);
 });
 

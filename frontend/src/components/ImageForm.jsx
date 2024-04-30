@@ -6,7 +6,7 @@ import { useUserContext } from '../context/UserContext'
 function ImageForm() {
 
     const [image, setImage] = useState({ preview: '', data: '' })
-    const [imageTitle, setImageTitle] = useState('')
+  
     const [status, setStatus] = useState('')
     const {currentUser, handleUpdateUser} = useUserContext();
 
@@ -17,12 +17,12 @@ function ImageForm() {
         // build up all form data to be sent to back end in a FormData object (comes built-in to browser-based JS)
         let formData = new FormData()
         formData.append('file', image.data)
-        formData.append('imageTitle', imageTitle)
+       
 
         try {
             // post everything from form (including image data) to backend, where we will save the image file to disk using multer middleware
             // https://www.positronx.io/react-file-upload-tutorial-with-node-express-and-multer/
-            const response = await axios.post(`/api/users/${currentUser.id}/image`, formData) // see backend for this route
+            const response = await axios.post(`/users/${currentUser._id}/image`, formData) // see backend for this route
             console.log(response.data)
             setStatus(response.data.result);
             //update current user with new profile photo details
@@ -46,7 +46,7 @@ function ImageForm() {
         <Container component="main" maxWidth="xs">
             <CssBaseline />
             <h3>Upload Image</h3>
-            {currentUser.id ?
+            {currentUser._id ?
             <Box component="form" onSubmit={handleSubmit} noValidate
                 sx={{
                     marginTop: 8,
@@ -55,11 +55,7 @@ function ImageForm() {
                     alignItems: 'center',
                 }}
             >
-                <TextField margin="normal" required fullWidth id="imageTitle" autoFocus
-                    label="Photo Title"
-                    name="imageTitle"
-                    value={imageTitle} onChange={(e) => setImageTitle(e.target.value)}
-                />
+           
                 {image.preview && <img src={image.preview} width='100' height='100' />}
                 <input name="photo" type="file" onChange={handleFileChange} />
 

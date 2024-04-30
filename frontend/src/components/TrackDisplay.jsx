@@ -4,11 +4,15 @@ import WeatherData from './WeatherData';
 import { Link } from 'react-router-dom';
 import { Card, CardMedia, Grid, Typography, Button, Link as MuiLink } from '@mui/material';
 import MyMap from './MyMap';
+import { useUserContext } from '../context/UserContext';
+import DisplayReview from './DisplayReview';
+import Weather from './Weather';
 
 const TrackDisplay = ({ trackId }) => {
     const [track, setTrack] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+    const {currentUser} =useUserContext();
 
     useEffect(() => {
         const fetchTrack = async () => {
@@ -34,7 +38,7 @@ const TrackDisplay = ({ trackId }) => {
 
     return (
         <>
-        <div style={{ padding: '20px', margin: '20px', border: '1px solid #ccc', borderRadius: '8px', backgroundColor:'#9DBC98 ' }}>
+        <div style={{ padding: '20px', margin: '20px', border: '1px solid #ccc', borderRadius: '8px', backgroundColor:'#68B984 ' }}>
             <Typography variant="h4" gutterBottom>
                 {track.title}
             </Typography>
@@ -72,11 +76,14 @@ const TrackDisplay = ({ trackId }) => {
                     {track.guidedTourStatus && (
                         <>
                             <Typography variant="body1"><strong>Tour Fee:</strong> ${track.guidedTourFee}</Typography>
+                            {currentUser.token?
                             <Link to={`/booking/${track._id}/${track.title}`} style={{ textDecoration: 'none' }}>
                                 <Button variant="contained" color="primary" onClick={() => console.log(track.title)}>
                                     BOOK NOW
                                 </Button>
-                            </Link>
+                            </Link>: 
+                            <Typography variant="body1"><strong>Please Log In to Book a Track</strong></Typography>
+                            }
                         </>
                     )}
                 </Grid>
@@ -89,7 +96,11 @@ const TrackDisplay = ({ trackId }) => {
 
         <WeatherData city={track.location}/>
         
-        
+        <DisplayReview trackId={track._id} trackName ={track.title}/>
+        </div>
+
+        <div style={{ padding: '20px', border: '1px solid #ccc', borderRadius: '8px', margin: '20px' }}>
+        <Weather cityId={track.location}/>
         </div>
         </>
     );

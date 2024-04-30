@@ -3,7 +3,7 @@ import axios from 'axios';
 import { TextField, Button, Box, Typography, Grid, Alert } from '@mui/material';
 import { useUserContext } from '../context/UserContext'; 
 
-function ReviewForm({ trackId,trackTitle }) {
+export default function ReviewForm({ trackId,trackTitle }) {
     const [review, setReview] = useState('');
     const [rating, setRating] = useState('');
     const [alert, setAlert] = useState({ show: false, message: '', severity: 'info' });
@@ -40,6 +40,7 @@ function ReviewForm({ trackId,trackTitle }) {
             setAlert({ show: true, message: 'Failed to submit review', severity: 'error' });
         }
     };
+    if(!currentUser.token) return null;
 
     return (
         <Grid container justifyContent="center">
@@ -96,5 +97,3 @@ function ReviewForm({ trackId,trackTitle }) {
         </Grid>
     );
 }
-
-export default ReviewForm;
