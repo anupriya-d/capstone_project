@@ -22,7 +22,11 @@ function MyAppBar() {
   const naVPages = [...pages]
   if (currentUser.userRole=="admin"){
 
-    naVPages.push({ link: "/managetrack", label: 'MANAGE TRACK' },)
+    naVPages.push({ link: "/managetrack", label: 'MANAGE APP' },)
+  }
+  if (currentUser.userRole=="user"){
+
+    naVPages.push({ link: "/mypage", label: 'MY PAGE' },)
   }
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -42,15 +46,15 @@ function MyAppBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <img src={campingLogo} alt="Camping Logo" style={{ width: 60, height: 60, marginRight: 10, display: { xs: 'flex', md: 'none' } }} />
-            <Typography variant="h6" noWrap component={NavLink} to="/" sx={{ mr: 2, display: { xs: 'block', md: 'flex' }, fontFamily: 'Georgia', fontStyle:"italic" ,fontWeight: 800, color: 'inherit', textDecoration: 'none' }}>
+            <img src={campingLogo} alt="Camping Logo" style={{ width: 60, height: 60, borderRadius:50, marginRight: 10, display: { xs: 'flex', md: 'none' } }} />
+            <Typography variant="h6" noWrap component={NavLink} to="/" sx={{ mr: 2, display: { xs: 'block', md: 'flex' }, fontFamily: 'Lugrasimo' ,fontWeight: 800,fontSize:'2rem', color: 'inherit', textDecoration: 'none' }}>
               Alpine Adventures
             </Typography>
           </Box>
 
           <Box sx={{ flexGrow: 1 }} />
 
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ display: { xs: 'flex', md: 'none' }}}>
             <IconButton size="large" aria-label="menu" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleOpenNavMenu} color="inherit">
               <MenuIcon />
             </IconButton>
@@ -72,7 +76,7 @@ function MyAppBar() {
               )}
               {currentUser.email && (
                 <MenuItem onClick={handleLogout}>
-                  Logout
+                  Logout 😊
                 </MenuItem>
               )}
             </Menu>
@@ -80,16 +84,16 @@ function MyAppBar() {
 
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             {naVPages.map((page) => (
-              <MenuItem key={page.link} component={NavLink} to={page.link}>
+              <MenuItem sx={{fontSize:'1.2rem'}} key={page.link} component={NavLink} to={page.link}>
                 {page.label}
               </MenuItem>
             ))}
             {!currentUser.email && (
               <>
-                <MenuItem component={NavLink} to="/signin">
+                <MenuItem sx={{fontSize:'1.2rem'}} component={NavLink} to="/signin">
                   SIGN IN
                 </MenuItem>
-                <MenuItem component={NavLink} to="/signup">
+                <MenuItem sx={{fontSize:'1.2rem'}} component={NavLink} to="/signup">
                   SIGN UP
                 </MenuItem>
               </>

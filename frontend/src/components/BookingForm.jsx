@@ -73,7 +73,7 @@ function BookingForm({ trackId,trackTitle }) {
                             renderInput={(params) => <TextField {...params} />}
                         />
                     </LocalizationProvider>
-                    <Button type="submit" variant="contained" color="primary" sx={{ marginTop: 2 }}>
+                    <Button type="submit" variant="contained" color="primary" sx={{ marginTop: 2 , backgroundColor:'#BEBEBE'}}>
                         Submit Booking
                     </Button>
                     {alert.show && (

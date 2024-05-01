@@ -16,8 +16,8 @@ const MyFooter = () => {
   return (
     <footer style={footerStyle}>
       <Container maxWidth="lg">
-        <Typography variant="h6" align="center" gutterBottom>
-          ALPINE ADVENTURE
+        <Typography variant="h6" align="center" gutterBottom sx={{fontFamily:'Lugrasimo'}}>
+          ALPINE ADVENTURES
         </Typography>
         <Typography variant="h6" align="center" color="white" fontSize="1rem">
           © {new Date().getFullYear()} Alpine Adventures. All rights reserved.

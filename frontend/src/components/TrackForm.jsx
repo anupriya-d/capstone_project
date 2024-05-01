@@ -74,21 +74,21 @@ const TrackForm = () => {
         }
         try {
             const response = await axios.post('/tracks/create', track,{headers:headers});  
-            console.log('Review submitted:', response.data);
+            console.log('Track submitted:', response.data);
         } catch (error) {
-            console.error('Failed to submit review:', error);
+            console.error('Failed to submit Track:', error);
         }
     };
 
     return (
         <Container component="main" maxWidth="md" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
             <Box component="form" onSubmit={handleSubmit}  sx={{ mt: 1, width: '100%' }}>
-                <Typography variant="h6" gutterBottom>
-                    Track Details
-                </Typography>
+                
                 <Grid container spacing={2} justifyContent="center">
                     <Grid item xs={12} md={6}>
-                       
+                    <Typography variant="h6" gutterBottom>
+                    Track Details
+                </Typography>
                         <TextField fullWidth required margin="normal" 
                         id="title" 
                         label="Title" 

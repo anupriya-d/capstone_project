@@ -58,7 +58,7 @@ function ActivityPage(props) {
         component="div"
         style={{ padding: 20, margin: 20 }}
       >
-        All Tracks for {name}
+        Awesome tracks for {name} walks ...
       </Typography>
       <Grid container spacing={3} style={{ padding: 20 }}>
         {tracks.map((track, index) => (

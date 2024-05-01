@@ -2,6 +2,13 @@
 import fiordlandImg from '../assets/fiordland.jpg'
 import aspiringImg from '../assets/mountaspiring.jpg'
 import cookgImg from '../assets/mountcook.jpg'
+import easy from '../assets/easytrack.jpg'
+import short from '../assets/short.jpg'
+import great from '../assets/great.jpg'
+import tramping from '../assets/tramping.jpg'
+
+
+
 
 export const parks = [
     {
@@ -29,28 +36,28 @@ Fiordland National Park is in the southwest of New Zealandâ€™s South Island. Itâ
     {
       id: 1,
       name:"easy",
-      image:fiordlandImg,
+      image:easy,
       title: "Easy Access Walks",
       descrpition: `Experience nature effortlessly: Easy access walks await.` 
     },
     {
       id: 2,
       name:"short",
-      image:aspiringImg,
+      image:short,
       title: "Short Walks",
       descrpition: `Quick escapes, lasting memories: Short walks for every adventurer`,
     },
     {
       id: 3,
       name:"great",
-      image:cookgImg,
+      image:great,
       title: "Great Walks",
       descrpition:`Epic journeys, unforgettable vistas: Embark on our great walks.`,
     },
     {
         id: 4,
         name:"tramping",
-        image:cookgImg,
+        image:tramping,
         title: "Tramping",
         descrpition:`AWhere trails become tales: Tramping through untouched beauty.`,
       }

@@ -16,7 +16,7 @@ const verifyToken = (req, res, next) => {
         // store decoded user data into request for controller function to use
         req.user = decoded;
         console.log(decoded)
-        if(user.userRole !='admin')return res.status(401).send("Only Admin users can manage Tracks");
+        if(decoded.userRole !='admin')return res.status(401).send("Only Admin users can manage Tracks");
     } catch (err) {
         return res.status(401).send("Invalid Token");
     }

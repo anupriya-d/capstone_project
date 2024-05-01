@@ -2,6 +2,7 @@ import ImageForm from "../components/ImageForm";
 import LoginForm from "../components/LoginForm";
 
 import MyAppBar from "../components/MyAppBar";
+import MyFooter from "../components/MyFooter";
 
 
 export default function SignUpPage() {
@@ -13,6 +14,7 @@ export default function SignUpPage() {
         
        <LoginForm/>
        <ImageForm/>
+       <MyFooter/>
       </>
     );
   }

@@ -28,7 +28,7 @@ function TrackCard({ track }) {
           </Typography>
 
           <Typography variant="body2" color="text.secondary">
-            Difficulty : {track.trackType}
+            Track Category: {track.trackType.map((type, index) => index === 0 ? type : ` | ${type}`)}
           </Typography>
 
           <Link to={`/track/${track._id}/${track.title}`} style={{ textDecoration: 'none' }}>

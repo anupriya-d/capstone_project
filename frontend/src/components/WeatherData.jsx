@@ -43,7 +43,7 @@ function WeatherData({ city }) {
     <div>
       {weatherData && (
         <div>
-          <h2>Weather in {city}</h2>
+          <h2>Current Weather in {city}</h2>
           <p>Temperature: {Math.floor((weatherData.main.temp)-273.15)} C</p>
           <p>Humidity: {weatherData.main.humidity}%</p>
           <p>Main Weather Type: {weatherData.weather[0].main}</p>

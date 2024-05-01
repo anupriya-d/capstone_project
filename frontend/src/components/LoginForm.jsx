@@ -19,7 +19,7 @@ function Copyright(props) {
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
             {'Copyright © '}
             <Link color="inherit" href="https://mui.com/">
-                Your Website
+                Alpine Adventures
             </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
@@ -84,7 +84,7 @@ export default function LoginForm() {
 
     return (
         <Container component="main" maxWidth="xs">
-            <CssBaseline />
+         
             <Box
                 sx={{
                     marginTop: 8,

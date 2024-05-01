@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const DisplayReview = ({ trackId ,trackName}) => {
+const DisplayReviewsByUser = ({ userId ,userName}) => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
@@ -9,7 +9,7 @@ const DisplayReview = ({ trackId ,trackName}) => {
     const fetchReviews = async () => {
       try {
         
-        const response = await axios.get(`/reviews/track/${trackId}`); 
+        const response = await axios.get(`/reviews/user/${userId}`); 
         setReviews(response.data.data);
         console.log(response.data.data)
       } catch (error) {
@@ -22,7 +22,7 @@ const DisplayReview = ({ trackId ,trackName}) => {
 
   return (
     <div>
-      <h2>Reviews for {trackName}</h2>
+      <h4>Reviews Given By You</h4>
 
       {reviews.map(review => (
         <div key={review._id}>
@@ -30,11 +30,12 @@ const DisplayReview = ({ trackId ,trackName}) => {
           
           <p>Review: {review.review}</p>
           <p>Rating: {review.rating}</p>
-          <p>Reviewed By: {review.user && review.user.length > 0 && review.user[0].firstName}</p> 
+          <p>Review For: {review.track && review.track.length > 0 && review.track[0].title}</p> 
+          <br />
         </div>
       ))} 
     </div>
   );
 };
 
-export default DisplayReview;
+export default DisplayReviewsByUser;

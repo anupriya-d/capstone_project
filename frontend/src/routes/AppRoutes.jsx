@@ -10,6 +10,7 @@ import ParkPage from "../pages/ParkPage";
 import ManageTrackPage from "../pages/ManageTrackPage";
 import BookingPage from "../pages/BookingPage";
 import ForgotPassword from "../components/ForgotPassword";
+import MyPage from "../pages/MyPage";
 
 function AppRoutes(props) {
 
@@ -29,6 +30,7 @@ function AppRoutes(props) {
       <Route path="forgotpw" element={<ForgotPassword {...props} />} />
       <Route path="/booking/:id/:title" element={<BookingPage {...props} />} />
       <Route path="/managetrack" element={<ManageTrackPage {...props} />} />
+      <Route path="/mypage" element={<MyPage {...props} />} />
       
       {/* special route to handle if none of the above match */}
 

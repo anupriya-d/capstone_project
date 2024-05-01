@@ -18,4 +18,12 @@ reviewRoute.post('/create', (req, res) => {
     reviewRoute.get('/track/:id', (req, res) => {
         Controllers.reviewController.getReviewsByTrackId(req, res);
     });
+    reviewRoute.get('/user/:id', (req, res) => {
+        Controllers.reviewController.getReviewsByUserId(req, res);
+    });
+
+    reviewRoute.delete('/:id', (req, res) => {
+        Controllers.reviewController.deleteReview(req, res);
+    });
+   
 module.exports = reviewRoute;

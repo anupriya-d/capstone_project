@@ -2,20 +2,22 @@ import React from 'react';
 import { Grid, Typography, Card, CardContent, CardMedia,Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { parks } from '../data/nationalParks';
+import Weather from './Weather';
 
 
 function ExploreParks() {
     return (
+      
       <Grid container spacing={3} sx={{ justifyContent:'center'}}>
         {parks.map((place, index) => (
-          <Grid item xs={12}  md={3} key={index} sx={{marginTop:'60px'}}>
+          <Grid item xs={12}  md={3} key={index} sx={{marginTop:'60px', margin:'20px'}}>
             <Card  sx={{
                 transition: 'transform 0.3s',
                 '&:hover': {
                   transform: 'scale(1.05)',
                    
                 },
-                backgroundColor:'#F1D18A'
+                backgroundColor:'#BEBEBE'
               }}>
               <CardMedia
                 component="img"
@@ -45,6 +47,7 @@ function ExploreParks() {
           </Grid>
         ))}
       </Grid>
+      
     );
   };
 

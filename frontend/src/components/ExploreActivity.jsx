@@ -5,6 +5,7 @@ import { walks } from '../data/nationalParks';
 
 function ExploreActivity() {
   return (
+    
     <Grid container spacing={3} sx={{ justifyContent: 'center' }}>
       {walks.map((walk, index) => (
         <Grid item xs={12} md={2} key={index} sx={{ marginTop: '60px', marginLeft: '20px', marginRight: '20px' }}>
@@ -38,6 +39,7 @@ function ExploreActivity() {
         </Grid>
       ))}
     </Grid>
+    
   );
 };
 

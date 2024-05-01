@@ -5,6 +5,8 @@ import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import axios from 'axios'
+import MyAppBar from './MyAppBar';
+import MyFooter from './MyFooter';
 
 export default function ForgotPassword() {
 
@@ -19,7 +21,10 @@ export default function ForgotPassword() {
     };
 
     return (
+        <>
+        <MyAppBar/>
         <Container component="main" maxWidth="xs">
+            
             <CssBaseline />
             <Box component="form" onSubmit={handleSubmit} noValidate sx={{
                 marginTop: 8,
@@ -44,5 +49,7 @@ export default function ForgotPassword() {
                 <p>{resultMsg}</p>
             </Box>
         </Container>
+        <MyFooter/>
+        </>
     );
 }

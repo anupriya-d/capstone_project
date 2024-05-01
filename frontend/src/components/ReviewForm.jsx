@@ -84,6 +84,7 @@ export default function ReviewForm({ trackId,trackTitle }) {
                         variant="contained" 
                         color="primary"
                         disabled={!currentUser} // Disable the button if no user is logged in
+                        sx={{backgroundColor:'gray'}}
                     >
                         Submit Review
                     </Button>
