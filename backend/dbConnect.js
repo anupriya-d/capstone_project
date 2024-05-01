@@ -1,8 +1,8 @@
 'use strict';
+//define mongoose
 const Mongoose = require('mongoose');
 
-// if the connection fails, try 127.0.0.1 instead oflocalhost below
-
+//url to mongodb atlas
 const uri = process.env.DB_URI ||
 `mongodb+srv://anupriyad:iodtest%40202A@cluster0.9qwzb92.mongodb.net/hiking?retryWrites=true&w=majority&appName=Cluster0`;
 // Connect to MongoDB

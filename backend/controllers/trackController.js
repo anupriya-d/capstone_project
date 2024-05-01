@@ -1,7 +1,9 @@
 "use strict";
-
+//get all required modules
 let Models = require("../models");
 
+
+//create track 
 const createTrack = (data, res) => {
   console.log(data);
   new Models.Track(data)
@@ -14,7 +16,7 @@ const createTrack = (data, res) => {
 };
 
   
-
+//to get all  track 
   const getAllTracks = ( res) => {
     Models.Track.find({})
     .then((data) => res.send({ result: 200, data: data }))

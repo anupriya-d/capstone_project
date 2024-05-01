@@ -1,5 +1,5 @@
 "use strict";
-
+//getting all supported modules 
 let Models = require("../models");
 
 //create a new review
@@ -35,7 +35,7 @@ const getReviewById = (req, res) => {
       });
 };
 
-
+//get all review by by trackID to display on track page
 const getReviewsByTrackId = async (req, res) => {
   try {
     const reviews = await Models.Review.find({ track: req.params.id }).populate('user');
@@ -46,6 +46,7 @@ const getReviewsByTrackId = async (req, res) => {
   }
 };
 
+//get all review by by userID to display on userpage
 const getReviewsByUserId = async (req, res) => {
   try {
     const reviews = await Models.Review.find({ user: req.params.id }).populate('track')
@@ -57,7 +58,7 @@ const getReviewsByUserId = async (req, res) => {
 };
 
 
- // deletes the Review matching the ID from the param
+ // deletes the Review matching the ID from the param for admin purposes
  const deleteReview = (req, res) => {
   Models.Review.findByIdAndDelete(req.params.id)
    .then((data) => res.send({ result: 200, data: data }))

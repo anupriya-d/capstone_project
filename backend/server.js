@@ -1,15 +1,12 @@
-const express = require('express');
+const express = require("express");
+const app = express();
 
-//const dotenv = require("dotenv");
-
-
-
-
-const app =express();
+//define port number for beckend
 const PORT = process.env.PORT || 8000;
 
-require('dotenv').config();
+require("dotenv").config();
 
+// Require the database connection module
 let dbConnect = require("./dbConnect");
 
 app.use(express.json());
@@ -17,22 +14,28 @@ app.use(express.json());
 app.use("/images", express.static("public/images"));
 
 
-app.get('/',(req,res)=>{
-    res.json({messege: 'Welcome to My Hiking Application'});
+//main route of the backend app
+app.get("/", (req, res) => {
+  res.json({ messege: "Welcome to My Hiking Application" });
 });
 
-let userRoutes = require("./routes/userRoutes");//for users
+//routes related to users
+let userRoutes = require("./routes/userRoutes"); 
 app.use("/users", userRoutes);
 
-let trackRoutes = require("./routes/trackRoutes");//for users
+//routes related to tracks
+let trackRoutes = require("./routes/trackRoutes"); 
 app.use("/tracks", trackRoutes);
 
-let reviewRoutes = require("./routes/reviewRoutes");//for users
+//routes related to reviews
+let reviewRoutes = require("./routes/reviewRoutes"); 
 app.use("/reviews", reviewRoutes);
 
-let bookingRoutes = require("./routes/bookingRoutes");//for users
+//routes related to bookings
+let bookingRoutes = require("./routes/bookingRoutes"); 
 app.use("/bookings", bookingRoutes);
 
-app.listen(PORT,()=> {
-    console.log(`Server Running on PORT ${PORT}`);
+// Start the server and listen on the specified port and logging a messege to console
+app.listen(PORT, () => {
+  console.log(`Server Running on PORT ${PORT}`);
 });
