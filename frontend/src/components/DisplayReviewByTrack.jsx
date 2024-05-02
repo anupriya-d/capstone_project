@@ -20,6 +20,8 @@ const DisplayReviewByTrack = ({ trackId ,trackName}) => {
     fetchReviews();
   }, []);
 
+  
+
   return (
     <div>
       <h2>Reviews for {trackName}</h2>
@@ -31,6 +33,7 @@ const DisplayReviewByTrack = ({ trackId ,trackName}) => {
           <p>Review: {review.review}</p>
           <p>Rating: {review.rating}</p>
           <p>Reviewed By: {review.user && review.user.length > 0 && review.user[0].firstName}</p> 
+          <p>Reviewed: {review.reviewdAt}</p>
         </div>
       ))} 
     </div>

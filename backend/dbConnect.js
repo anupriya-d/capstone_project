@@ -3,8 +3,8 @@
 const Mongoose = require('mongoose');
 
 //url to mongodb atlas
-const uri = process.env.DB_URI ||
-`mongodb+srv://anupriyad:iodtest%40202A@cluster0.9qwzb92.mongodb.net/hiking?retryWrites=true&w=majority&appName=Cluster0`;
+const uri = process.env.DB_URI;
+
 // Connect to MongoDB
 
 Mongoose.connect(uri)

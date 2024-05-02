@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { TextField, Button, Box, Typography, Grid, Alert } from '@mui/material';
-import { useUserContext } from '../context/UserContext'; 
+import { TextField, Button, Box, Typography, Grid, Alert, Rating } from '@mui/material';
+import { useUserContext } from '../context/UserContext';
 
-export default function ReviewForm({ trackId,trackTitle }) {
+export default function ReviewForm({ trackId, trackTitle }) {
     const [review, setReview] = useState('');
-    const [rating, setRating] = useState('');
+    const [rating, setRating] = useState(0); // Initialize rating state to 0
     const [alert, setAlert] = useState({ show: false, message: '', severity: 'info' });
 
-    const { currentUser } = useUserContext(); 
+    const { currentUser } = useUserContext();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -40,7 +40,7 @@ export default function ReviewForm({ trackId,trackTitle }) {
             setAlert({ show: true, message: 'Failed to submit review', severity: 'error' });
         }
     };
-    if(!currentUser.token) return null;
+    if (!currentUser.token) return null;
 
     return (
         <Grid container justifyContent="center">
@@ -70,21 +70,22 @@ export default function ReviewForm({ trackId,trackTitle }) {
                         required
                         onChange={e => setReview(e.target.value)}
                     />
-                    <TextField
-                        sx={{ margin: '10px' }}
-                        label="Rating"
-                        variant="outlined"
-                        fullWidth
-                        value={rating}
-                        required
-                        onChange={e => setRating(e.target.value)}
-                    />
-                    <Button 
-                        type="submit" 
-                        variant="contained" 
+                    <Box sx={{ margin: '10px', display: 'flex', alignItems: 'center' }}>
+                        <Typography variant="body1" sx={{ marginRight: '10px' }}>Rating:</Typography>
+                        <Rating
+                            value={rating}
+                            onChange={(event, newValue) => {
+                                setRating(newValue);
+                            }}
+                            precision={1} // Allow half-star increments
+                        />
+                    </Box>
+                    <Button
+                        type="submit"
+                        variant="contained"
                         color="primary"
                         disabled={!currentUser} // Disable the button if no user is logged in
-                        sx={{backgroundColor:'gray'}}
+                        sx={{ backgroundColor: 'gray' }}
                     >
                         Submit Review
                     </Button>

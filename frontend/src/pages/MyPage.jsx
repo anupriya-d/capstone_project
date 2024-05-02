@@ -22,9 +22,6 @@ export default function MyPage() {
             <Grid item xs={12} sm={6} md={4}>
                 <Card>
                     <CardContent>
-                        <Typography variant="h6" gutterBottom>
-                            Reviews by {currentUser.firstName}
-                        </Typography>
                         <DisplayReviewsByUser userId={currentUser._id} userName={currentUser.firstName} />
                     </CardContent>
                 </Card>
@@ -32,9 +29,6 @@ export default function MyPage() {
             <Grid item xs={12} sm={6} md={4}>
                 <Card>
                     <CardContent>
-                        <Typography variant="h6" gutterBottom>
-                            Reviews by {currentUser.firstName}
-                        </Typography>
                         <DisplayBookingByUser userId={currentUser._id}/>
                     </CardContent>
                 </Card>

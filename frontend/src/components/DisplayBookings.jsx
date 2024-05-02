@@ -20,6 +20,17 @@ const DisplayBookings = () => {
     fetchBookings();
   }, []);
 
+
+  const deleteBookings = async (bookingId) => {
+    try {
+      await axios.delete(`/bookings/${bookingId}`);
+      setBookings(bookings.filter(booking => booking._id !== bookingId));
+    } catch (error) {
+      console.error('Error deleting Booking:', error);
+    }
+  };
+
+
   return (
     <div style={{ padding: '20px', margin: '20px', border: '1px solid #ccc', borderRadius: '8px', backgroundColor:'#68B984 ' }}>
       <h2>All Bookings Recieved</h2>
@@ -33,7 +44,7 @@ const DisplayBookings = () => {
           <p>Booked Tour For: {booking.track && booking.track.length > 0 && booking.track[0].title}</p> 
           <p>Booking Date: {booking.bookingDate}</p>
           <p>BookedAt: {booking.bookedAt}</p>
-          
+          <button style={{ backgroundColor: 'red', color: 'white', padding:'10px',margin:'10px', borderRadius:'5px', border:'none' }} onClick={() => deleteBookings(booking._id)}>Delete</button> {/* Delete button */}
         </div>
       ))} 
     </div>

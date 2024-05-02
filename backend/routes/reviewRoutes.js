@@ -26,4 +26,8 @@ reviewRoute.post('/create', (req, res) => {
         Controllers.reviewController.deleteReview(req, res);
     });
    
+    reviewRoute.put('/:id',(req, res) => {
+        Controllers.reviewController.updateReview(req, res);
+    });
+   
 module.exports = reviewRoute;

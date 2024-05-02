@@ -8,7 +8,7 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
-import { NavLink } from 'react-router-dom';
+import { NavLink,useNavigate } from 'react-router-dom';
 import { pages } from '../pages/pages';
 import campingLogo from '../assets/camping.png';
 
@@ -20,6 +20,7 @@ function MyAppBar() {
   const { currentUser, handleUpdateUser } = useUserContext(); // Get user state and update function
   console.log(currentUser)
   const naVPages = [...pages]
+  const navigate = useNavigate()
   if (currentUser.userRole=="admin"){
 
     naVPages.push({ link: "/managetrack", label: 'MANAGE APP' },)
@@ -38,7 +39,9 @@ function MyAppBar() {
 
   const handleLogout = () => {
     handleUpdateUser({}); 
+    navigate("/signin")
     handleCloseNavMenu();
+     
   };
 
   return (

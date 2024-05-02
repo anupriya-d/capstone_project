@@ -68,4 +68,23 @@ const getReviewsByUserId = async (req, res) => {
    });
 };
 
-module.exports = {createReview,getReviews,getReviewById,getReviewsByTrackId,getReviewsByUserId,deleteReview}
+
+const updateReview = (req, res) => {
+  const { id } = req.params;
+  const { review, rating } = req.body;
+
+  Models.Review.findByIdAndUpdate(id, { review, rating }, { new: true })
+    .then((updatedReview) => {
+      if (!updatedReview) {
+        return res.status(404).send({ result: 404, error: 'Review not found' });
+      }
+      res.status(200).send({ result: 200, data: updatedReview });
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send({ result: 500, error: 'Internal server error' });
+    });
+};
+
+
+module.exports = {createReview,getReviews,getReviewById,getReviewsByTrackId,getReviewsByUserId,deleteReview,updateReview}
