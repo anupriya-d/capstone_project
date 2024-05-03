@@ -26,7 +26,7 @@ const createTrack = (data, res) => {
     });
 };
 
-
+//to get traack data by it's it
 const getTrackById = (req, res) => {
  
   Models.Track.findById(req.params.id)
@@ -94,8 +94,17 @@ const addTrackImage = (req, res) => {
 }
 
 
+ // deletes the Track matching the ID from the param for admin purposes
+ const deleteTrack= (req, res) => {
+  Models.Track.findByIdAndDelete(req.params.id)
+   .then((data) => res.send({ result: 200, data: data }))
+   .catch((err) => {
+     console.log(err);
+     res.send({ result: 500, error: err.message });
+   });
+};
 
 
 
 
-module.exports = {createTrack,getAllTracks,getTrackById,getTracksByType,getTracksByPark,addTrackImage}
+module.exports = {createTrack,getAllTracks,getTrackById,getTracksByType,getTracksByPark,addTrackImage,deleteTrack}

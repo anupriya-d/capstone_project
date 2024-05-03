@@ -50,7 +50,7 @@ const transporter = nodemailer.createTransport({
      // sender address
        to: user.email, // list of receivers
        bcc:"anupriya_dayaratne@outlook.com",
-       subject: "Booking ✔", // Subject line
+       subject: "Reminder ✔", // Subject line
        text: `Hello ${user.firstName}, Your New Password is ${user.password} `, // plain text body
        //html: "<b>Your Booking Recieved and Confirmation will recieve Soon</b>", // html body
      }

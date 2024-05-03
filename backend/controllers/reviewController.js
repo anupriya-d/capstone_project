@@ -68,7 +68,7 @@ const getReviewsByUserId = async (req, res) => {
    });
 };
 
-
+// update the Review matching the ID from the param for user purposes
 const updateReview = (req, res) => {
   const { id } = req.params;
   const { review, rating } = req.body;

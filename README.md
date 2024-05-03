@@ -19,5 +19,31 @@ Backend buit with
 * jwt - token support for usr authorization
 
 
+DEVELOPMENT - Local
+1. Clone the repos
+
+    Clone this repo into a location to your device
+    
+
+2. Prep the environment variables
+
+	Inside .env file you can change some environment variable as you needed. 
+    DB_URI ={mongodb URL , it can be local or cloud }
+	JWT_KEY={change the string here as you want}
+	APP_PW={this for email send support. this pw must be your email service provider app password}
+	USER={email id must here which used by the app to communicate with user}
+3. Prep Database
+	database and collections must be populated at first run of backend app -> by server.js
+
+4. To Run
+	Backend API 
+	using you command prompt/terminal navigate to backend folder and run "npm install"
+	to complete installation of all dependencies
+	and once it successfully run "npm start"
+	
+	Frontend
+	using you command prompt/terminal navigate to frontend folder and run "npm install"
+	to complete installation of all dependencies
+	and once it successfully run "npm run dev" / Note : This will run as development mode 
 
 

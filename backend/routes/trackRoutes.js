@@ -29,7 +29,9 @@ trackRoute.post('/:trackId/image/', uploadFile, (req, res) => { // uses multer m
     Controllers.trackController.addTrackImage(req, res)
 })
 
-
+trackRoute.delete('/:id', (req, res) => {
+    Controllers.trackController.deleteTrack(req, res);
+});
 
 
 module.exports = trackRoute;
